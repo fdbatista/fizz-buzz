@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 
-    <?php $form = ActiveForm::begin(['id' => 'fizzbuzz-form']); ?>
+    <?php $form = ActiveForm::begin(['id' => 'fizzbuzz-form', ]); ?>
 
     <?= $form->field($model, 'min', ['inputTemplate' => '<div class="row"><div class="col-xs-6 col-sm-4">{input}</div></div>'])->textInput(['autofocus' => true]) ?>
     <?= $form->field($model, 'max', ['inputTemplate' => '<div class="row"><div class="col-xs-6 col-sm-4">{input}</div></div>'])->textInput() ?>

@@ -32,4 +32,24 @@ class FizzBuzz extends Model {
         ];
     }
 
+    public function validateInterval($attribute, $params) {
+        if ($this->max - $this->min !== 99) {
+            $this->addError('max', 'Invalid interval.');
+        }
+    }
+    
+    public function processInterval() {
+        $min = $this->min;
+        $max = $this->max;
+        $res = [];
+        for($i = $min; $i <= $max; $i++) {
+            $res[] = $this->processNumber($i);
+        }
+        return $res;
+    }
+    
+    public function processNumber(int $number) {
+        return ($number % 15 === 0 ? 'FizzBuzz' : ($number % 3 === 0 ? 'Fizz' : ($number % 5 === 0 ? 'Buzz' : $number)));
+    }
+
 }
